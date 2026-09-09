@@ -41,6 +41,6 @@ jobs:
             COMFYUI_REF=master
           tags: |
             ghcr.io/${{ env.OWNER_LC }}/minerva-comfyui-base:v1
-            ghcr.io/${{ env.OWNER_LC }}/minerva-comfyui-base:comfyui-0.34.0
+            ghcr.io/${{ env.OWNER_LC }}/minerva-comfyui-base:edge
           cache-from: type=gha
           cache-to: type=gha,mode=max
