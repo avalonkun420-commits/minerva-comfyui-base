@@ -21,8 +21,14 @@ mkdir -p "$BASE"
 
 if [ ! -f "$COMFY/main.py" ]; then
     echo "[1/7] Initializing official baked ComfyUI..."
-    mkdir -p "$COMFY"
-    rsync -a /opt/comfyui-baked/ "$COMFY/"
+
+    # Remove an incomplete directory left by a failed bootstrap
+    rm -rf "$COMFY"
+
+    # Same first-time copy method used by the official RunPod image
+    cp -r /opt/comfyui-baked "$COMFY"
+
+    echo "[1/7] Official baked ComfyUI copied."
 else
     echo "[1/7] Existing ComfyUI found - keeping it."
 fi
